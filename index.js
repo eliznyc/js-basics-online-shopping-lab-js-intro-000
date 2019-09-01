@@ -10,7 +10,7 @@ function setCart(c) {
 }
 
 function addToCart(item) {
-  let price = Math.floor(Math.random(1) * Math.floor(99))+1 //generate random number
+  let price = Math.floor(Math.random(1) * Math.floor(99))+1 //generate random number from 1 to 100
   let product = {itemName: `${item}`, itemPrice: price } //generate object pair
   cart.push(product); //add object pair to cart
   return (`${item} has been added to your cart.`);
@@ -35,8 +35,8 @@ function total() {
 
 function removeFromCart(item) {
   for (var i = 0; i < cart.length; i++) {if (cart[i].itemName === item) {var d = i}}; //find index of item in array
-  if (cart.length===0) {return `That item is not in your cart.`}; //return canned response if cart is empty
-  if (d===null) {return `That item is not in your cart.`};//return canned response if item is not in cart
+  if (!cart.length) {return `That item is not in your cart.`}; //return canned response if cart is empty
+  if (!d) {return `That item is not in your cart.`};//return canned response if item is not in cart
   return cart.splice(d, 1);//remove item from cart and return cart
 }
 
