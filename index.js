@@ -30,8 +30,7 @@ function total() {
   var allPrices = [];//create array of prices only
   for (var i = 0; i < cart.length; i++) {
   allPrices.push(cart[i].itemPrice)};
-  var cartTotal = allPrices.reduce(function(a,b){return a+b}, 0);//add each item in the array
-  return cartTotal
+  return allPrices.reduce(function(a,b){return a+b}, 0);//add each item in the array
 }
 
 function removeFromCart(item) {
@@ -43,5 +42,6 @@ function removeFromCart(item) {
 
 function placeOrder(cardNumber) {
   if (!cardNumber) {return `Sorry, we don't have a credit card on file for you.`}
+  var cartTotal = allPrices.reduce(function(a,b){return a+b}, 0);//add each item in the array
   return `Your total cost is ${cartTotal}, which will be charged to the card ${cardNumber}.`
 }
