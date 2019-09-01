@@ -42,6 +42,5 @@ function removeFromCart(item) {
 
 function placeOrder(cardNumber) {
   if (!cardNumber) {return `Sorry, we don't have a credit card on file for you.`}
-  var cartTotal = allPrices.reduce(function(a,b){return a+b}, 0);//add each item in the array
-  return `Your total cost is ${cartTotal}, which will be charged to the card ${cardNumber}.`
+  return `Your total cost is ${total()}, which will be charged to the card ${cardNumber}.`
 }
